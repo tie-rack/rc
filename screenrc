@@ -1,0 +1,6 @@
+escape ^t^t
+
+startup_message off
+
+hardstatus alwayslastline
+hardstatus string "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?%{yk}"
