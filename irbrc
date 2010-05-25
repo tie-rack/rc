@@ -15,7 +15,12 @@ unless $0.match(/script\/server/)
   
   # This happens after everything else.  Including Rails if
   # this is happening in script/console
-  IRB.conf[:IRB_RC] = Proc.new { require 'guessmethod' }
+  IRB.conf[:IRB_RC] = Proc.new do
+    ActiveResource::Base.logger = Logger.new(STDOUT) if defined?(ActiveResource)
+    HyperactiveResource.logger = Logger.new(STDOUT) if defined?(HyperactiveResource)
+    require 'guessmethod' unless defined?(Rails)
+  end
+
 
   # Wirble - not in emacs, though
   unless ENV['INSIDE_EMACS']
