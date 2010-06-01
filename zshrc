@@ -41,7 +41,7 @@ parse_git_branch() {
 setopt prompt_subst
 PROMPT='%{$fg[green]%}[%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$fg[green]%}]%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}
 %{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[cyan]%}%m%{$reset_color%} '
-RPROMPT='%{$fg[red]%}$(parse_svn_status)%{$reset_color%} %{$bg[blue]%}%{$fg[cyan]%}$(parse_svn_revision) %{$fg[cyan]%}[%*]%{$reset_color%}'
+RPROMPT='%{$fg[red]%}$(parse_svn_status)%{$reset_color%} %{$bg[blue]%}%{$fg[cyan]%}$(parse_svn_revision)%{$reset_color%} %{$fg[cyan]%}[%*]%{$reset_color%}'
 
 # === LOCAL SETTINGS ===
 if [[ -r ~/.zshrclocal ]]; then
