@@ -43,6 +43,17 @@ PROMPT='%{$fg[green]%}[%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$fg[gree
 %{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[cyan]%}%m%{$reset_color%} '
 RPROMPT='%{$fg[red]%}$(parse_svn_status)%{$reset_color%} %{$bg[blue]%}%{$fg[cyan]%}$(parse_svn_revision)%{$reset_color%} %{$fg[cyan]%}[%*]%{$reset_color%}'
 
+# === TITLE ===
+case $TERM in
+    *xterm*|ansi)
+        function settab { print -Pn "\e]1;%c\a" }
+        function settitle { print -Pn "\e]2;%c\a" }
+        function chpwd { settab;settitle }
+        function precmd { settab;settitle }
+        settab;settitle
+        ;;
+esac
+
 # === LOCAL SETTINGS ===
 if [[ -r ~/.zshrclocal ]]; then
   source ~/.zshrclocal
