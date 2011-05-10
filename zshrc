@@ -6,8 +6,8 @@ alias ls="ls -lGA"
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # === Rails ===
-alias s-s="./script/server"
-alias s-c="./script/console"
+alias ss="./script/server"
+alias sc="./script/console"
 
 # === History ===
 HISTFILE=$HOME/.zhistory
