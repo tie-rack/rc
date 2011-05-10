@@ -2,7 +2,7 @@ autoload -U compinit; compinit
 autoload -U colors; colors
 autoload zmv
 
-alias ls="ls -lG"
+alias ls="ls -lGA"
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # === Rails ===
