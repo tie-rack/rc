@@ -18,7 +18,13 @@ unless $0.match(/script\/server/)
   IRB.conf[:IRB_RC] = Proc.new do
     ActiveResource::Base.logger = Logger.new(STDOUT) if defined?(ActiveResource)
     HyperactiveResource.logger = Logger.new(STDOUT) if defined?(HyperactiveResource)
-    require 'guessmethod' unless defined?(Rails)
+    if RUBY_VERSION < '1.9'
+      begin
+        require 'guessmethod' unless defined?(Rails)
+      rescue LoadError
+        # whatever
+      end
+    end
   end
 
 
