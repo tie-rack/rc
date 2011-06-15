@@ -58,3 +58,6 @@ esac
 if [[ -r ~/.zshrclocal ]]; then
   source ~/.zshrclocal
 fi
+
+# === EMACS ===
+[[ $TERM == eterm-color ]] && export TERM=xterm
