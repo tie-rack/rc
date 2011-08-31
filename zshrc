@@ -20,18 +20,6 @@ setopt extended_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
-# === SVN ===
-alias svn-add-all='svn add * --force' # 'svn st | grep "^?" | tr -d "?" | xargs svn add'
-alias st='svn status --ignore-externals | egrep -v "^X"'
-
-parse_svn_revision() {
-  svn info 2> /dev/null | grep Revision | cut -d ' ' -f 2
-}
-
-parse_svn_status() {
-  svn st --ignore-externals 2> /dev/null | grep '^[^X] ' | cut -c 1 | sort | uniq | tr -d "\n"
-}
-
 # === Git ===
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
