@@ -28,7 +28,7 @@ parse_git_branch() {
 # === PROMPT ===
 setopt prompt_subst
 PROMPT='%{$fg[green]%}[%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$fg[green]%}]%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}
-%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%}%{$fg[green]%}@%{$fg[cyan]%}%m%{$reset_color%} '
+%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
 RPROMPT='%{$fg[yellow]%}%?%{$reset_color%} %{$fg[cyan]%}[%*]%{$reset_color%}'
 
 # === TITLE ===
