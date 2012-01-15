@@ -5,6 +5,9 @@ autoload zmv
 alias ls="ls -lGA"
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
+# === Bundler ===
+alias be="bundle exec"
+
 # === Rails ===
 alias ss="./script/server"
 alias sc="./script/console"
