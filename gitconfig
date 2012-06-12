@@ -1,0 +1,11 @@
+[user]
+	name = Chris Shea
+	email = cmshea@gmail.com
+[color]
+	ui = true
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+[push]
+	default = tracking
