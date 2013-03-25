@@ -8,6 +8,6 @@
 	co = checkout
 	ci = commit
 [push]
-	default = tracking
+	default = upstream
 [core]
 	excludesfile = ~/.gitignore_global
