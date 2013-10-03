@@ -28,6 +28,8 @@ parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
+alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-whitespace"
+
 # === PROMPT ===
 setopt prompt_subst
 PROMPT='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}
