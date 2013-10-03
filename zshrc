@@ -57,3 +57,4 @@ fi
 
 alias e="emacsclient -n"
 
+export EDITOR=emacsclient
