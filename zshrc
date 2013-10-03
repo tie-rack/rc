@@ -53,4 +53,6 @@ fi
 # === EMACS ===
 [[ $TERM == eterm-color ]] && export TERM=xterm
 
+alias e="emacsclient -n"
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
