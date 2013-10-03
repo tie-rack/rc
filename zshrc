@@ -47,14 +47,14 @@ case $TERM in
         ;;
 esac
 
-# === LOCAL SETTINGS ===
-if [[ -r ~/.zshrclocal ]]; then
-  source ~/.zshrclocal
-fi
-
 # === EMACS ===
 [[ $TERM == eterm-color ]] && export TERM=xterm
 
 alias e="emacsclient -n"
 
 export EDITOR=emacsclient
+
+# === LOCAL SETTINGS ===
+if [[ -r ~/.zshrclocal ]]; then
+  source ~/.zshrclocal
+fi
