@@ -34,7 +34,7 @@ alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-wh
 setopt prompt_subst
 PROMPT='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}
 %{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
-RPROMPT='%{$fg[yellow]%}%?%{$reset_color%} %{$fg[cyan]%}%*%{$reset_color%}'
+RPROMPT='%{$fg[yellow]%}%?%{$reset_color%}'
 
 # === TITLE ===
 case $TERM in
