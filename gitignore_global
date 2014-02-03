@@ -5,5 +5,9 @@
 .DS_Store
 .DS_Store?
 
+# clojure
+.lein-*
+.nrepl-port
+
 # floobits
 .floo
