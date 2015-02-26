@@ -1,6 +1,9 @@
 # my own helpers
 .cms
 
+# notes
+/.notes
+
 # OS X :(
 .DS_Store
 .DS_Store?
@@ -8,6 +11,7 @@
 # clojure
 .lein-*
 .nrepl-port
+.repl
 
 # floobits
 .floo
