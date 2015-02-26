@@ -25,7 +25,7 @@ setopt hist_ignore_space
 
 # === Git ===
 parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+  git symbolic-ref --short HEAD 2> /dev/null
 }
 
 alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-whitespace"
