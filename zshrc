@@ -60,6 +60,10 @@ alias e="emacsclient -n"
 
 export EDITOR=emacsclient
 
+if [ $INSIDE_EMACS ]; then
+    export PAGER="emacs-pager"
+fi
+
 # === LOCAL SETTINGS ===
 if [[ -r ~/.zshrclocal ]]; then
   source ~/.zshrclocal
