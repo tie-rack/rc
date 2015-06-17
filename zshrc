@@ -32,9 +32,15 @@ alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-wh
 
 # === PROMPT ===
 setopt prompt_subst
-PROMPT='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}
-%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
+PROMPT_1='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}'
+PROMPT_2='%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
 RPROMPT='%{$fg[yellow]%}%?%{$reset_color%}'
+if [[ -n "$INSIDE_EMACS" ]]; then
+    PROMPT_1="$PROMPT_1 $RPROMPT"
+    RPROMPT=""
+fi
+PROMPT="$PROMPT_1
+$PROMPT_2"
 
 # === TITLE ===
 case $TERM in
