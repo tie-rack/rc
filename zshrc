@@ -14,8 +14,8 @@ alias sc="./script/console"
 
 # === History ===
 HISTFILE=$HOME/.zhistory
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt append_history
 setopt inc_append_history
 setopt share_history
