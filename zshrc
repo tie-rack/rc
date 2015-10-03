@@ -30,9 +30,14 @@ parse_git_branch() {
 
 alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-whitespace"
 
+# === Docker ===
+docker_host() {
+  echo $DOCKER_HOST | cut -d '/' -f 3 | cut -d ':' -f 1
+}
+
 # === PROMPT ===
 setopt prompt_subst
-PROMPT_1='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%}'
+PROMPT_1='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} %{$fg[blue]%}$(docker_host)%{$reset_color%} %{$fg[red]%}$FLEETCTL_TUNNEL%{$reset_color%}'
 PROMPT_2='%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
 RPROMPT='%{$fg[yellow]%}%?%{$reset_color%}'
 if [[ -n "$INSIDE_EMACS" ]]; then
