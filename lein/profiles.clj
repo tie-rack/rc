@@ -1,7 +1,7 @@
 {:user
- {:dependencies [[org.clojure/tools.nrepl "0.2.7"]
+ {:dependencies [[org.clojure/tools.nrepl "0.2.12"]
                  [slamhound "1.5.1"]]
-  :plugins [[cider/cider-nrepl "0.10.0-SNAPSHOT"]
+  :plugins [[cider/cider-nrepl "0.10.0"]
             [lein-kibit "0.0.8"]
             [jonase/eastwood "0.0.2"]
             [lein-pprint "1.1.1"]
