@@ -1,6 +1,7 @@
 [user]
-	name = Chris Shea
+	name = Christopher Shea
 	email = cmshea@gmail.com
+  signingkey = 55CD0198
 [color]
 	ui = true
 [alias]
@@ -11,3 +12,5 @@
 	default = upstream
 [core]
 	excludesfile = ~/.gitignore_global
+[commit]
+	gpgsign = true
