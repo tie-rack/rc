@@ -1,6 +1,10 @@
 # my own helpers
 .cms
 
+
+# Emacs
+.dir-locals.el
+
 # notes
 /.notes
 
