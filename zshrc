@@ -26,21 +26,28 @@ setopt hist_ignore_space
 # === .cms ===
 cms_dir() {
     if [ -d .cms ]; then
-        echo '👻'
+        if [ $INSIDE_EMACS ]; then
+            echo ' (◟ᅇ)◜'
+        else
+            echo ' 👻'
+        fi
     fi
 }
 
 # === Git ===
 parse_git_branch() {
-  git symbolic-ref --short HEAD 2> /dev/null
+    BRANCH=$(git symbolic-ref --short HEAD 2> /dev/null)
+    if [ $BRANCH ]; then
+        echo "%{$fg[cyan]%} $BRANCH%{$reset_color%}"
+    fi
 }
 
 alias git-no-whitespace="git diff -w --no-color | git apply --cached --ignore-whitespace"
 
 # === PROMPT ===
 setopt prompt_subst
-PROMPT_1='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%} %{$reset_color%}%{$fg[cyan]%}$(parse_git_branch)%{$reset_color%} $(cms_dir)'
-PROMPT_2='%{$terminfo[bold]$fg[yellow]%}%n%{$reset_color%} '
+PROMPT_1='%{$terminfo[bold]$fg[green]%}%~%{$reset_color%}%{$reset_color%}$(parse_git_branch)$(cms_dir)'
+PROMPT_2='%{$terminfo[bold]$fg[yellow]%}%#%{$reset_color%} '
 RPROMPT='%{$fg[yellow]%}%?%{$reset_color%}'
 if [[ -n "$INSIDE_EMACS" ]]; then
     PROMPT_1="$PROMPT_1 $RPROMPT"
